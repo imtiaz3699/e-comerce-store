@@ -1,8 +1,13 @@
 'use client'
 
 import Image from "next/image"
+import React,{useState,useEffect} from 'react';
+import WhyChooseUse from "../WhyChooseUs/WhyChooseUs"
+import { usePathname } from "next/navigation";
 
 export default function Footer () {
+    const [state, setState] = useState(false);
+    const pathName = usePathname();
     const support = [
         {
             name:'111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.',
@@ -57,7 +62,29 @@ export default function Footer () {
             url:'',
         },
     ]
-        return <div className="px-[135px] flex flex-row gap-[87px] py-[60px] bg-black text-white">
+    useEffect(()=> {
+        // const expr = 'Papayas';
+        switch (pathName) {
+          case '/':
+          setState(true)  
+          break;
+          case '/about':
+           setState(true)
+            break;
+            case '/signup':
+           setState(false)
+            break;
+          default:
+            // console.log(`Sorry, we are out of ${expr}.`);
+            setState(false);
+        }
+    },[pathName])
+        return <>
+        {
+            state && <WhyChooseUse/>
+        }
+        
+         <div className="px-[135px] flex flex-row gap-[87px] py-[60px] bg-black text-white">
                 <div className="flex flex-col gap-[24px]">
                     <h1 className="text-[24px] font-bold leading-[24px]">Exclusive</h1>
                     <p>Subscribe</p>  
@@ -97,4 +124,5 @@ export default function Footer () {
                 <h1 className="text-[24px] font-bold leading-[24px]">Download App</h1>
                 </div>
         </div>
+        </>
 }

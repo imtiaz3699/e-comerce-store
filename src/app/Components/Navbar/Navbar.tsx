@@ -1,22 +1,49 @@
 'use client'
 
 import Image from "next/image"
+import Link from "next/link"
+import {usePathname} from 'next/navigation'
+import React,{useEffect,useState} from 'react';
 
 export default function Navbar () {
+
     const navItems = [
         {
             name:'Home',
+            url:'/',
         },
         {
             name:'Contact',
+            url:'',
         },
         {
             name:'About',
+            url:'/about',
         },
         {
             name:'Sign Up',
+            url:'/signup',
         },
     ]
+    const [state, setState] = useState(true);
+    const pathName = usePathname();
+    useEffect(()=> {
+        // const expr = 'Papayas';
+        switch (pathName) {
+          case '/':
+          setState(false)  
+          break;
+          case '/about':
+           setState(true)
+            break;
+            case '/signup':
+           setState(true)
+            break;
+          default:
+            // console.log(`Sorry, we are out of ${expr}.`);
+            setState(false);
+        }
+    },[pathName])
     return <div className="">
         <div className="flex flex-row items-center justify-end px-[136px] gap-[231px] text-white bg-black h-[48px] w-full">
             <h1>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</h1>
@@ -29,7 +56,10 @@ export default function Navbar () {
             <div className="flex flex-row items-center gap-[48px]">
                     {
                         navItems.map((element,idx)=> {
-                            return <div>{element.name}</div>
+
+                            return <Link href={element.url}> 
+                            <div key = {idx} className={`${pathName === element.url ? "underline text-[#DB4444]" : ""}`}>{element.name}</div>
+                            </Link>
                         })
                     }
             </div>
@@ -50,5 +80,14 @@ export default function Navbar () {
 
             </div>
         </div>
+{
+    state && <div className="pt-[80px] flex flex-row items-center">
+    {
+     navItems.map((element,idx)=> {
+                        return <div key={idx} >{pathName === element.url ? element.name : ''}</div>
+     })
+    } 
+ </div>
+}                    
     </div>
 }

@@ -18,7 +18,7 @@ export default function Home() {
       <Products/>
       <BestSellingProducts/>
       <NewArrival/>
-      <WhyChooseUse/>
+      {/* <WhyChooseUse/> */}
     </div>
   )
 }

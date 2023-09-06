@@ -14,7 +14,7 @@ export default function Navbar () {
         },
         {
             name:'Contact',
-            url:'',
+            url:'/contact',
         },
         {
             name:'About',
@@ -39,6 +39,9 @@ export default function Navbar () {
             case '/signup':
            setState(true)
             break;
+            case '/contact':
+           setState(true)
+           break;
           default:
             // console.log(`Sorry, we are out of ${expr}.`);
             setState(false);
@@ -57,8 +60,8 @@ export default function Navbar () {
                     {
                         navItems.map((element,idx)=> {
 
-                            return <Link href={element.url}> 
-                            <div key = {idx} className={`${pathName === element.url ? "underline text-[#DB4444]" : ""}`}>{element.name}</div>
+                            return <Link key = {idx} href={element.url}> 
+                            <div  className={`${pathName === element.url ? "underline text-[#DB4444]" : ""}`}>{element.name}</div>
                             </Link>
                         })
                     }
@@ -74,8 +77,15 @@ export default function Navbar () {
       </span>
       <input type="search" name="q" className="py-[7px] px-[12px] text-sm text-white  rounded-md pl-10 bg-[#F5F5F5] focus:outline-none focus:bg-white focus:text-gray-900" placeholder="Search..." />
     </div>
+    <Link href='/wish-list'>
     <Image alt = "" src = "/Wishlist.png" width={32} height={32}/>
+    </Link>
+    <Link href='/cart'>
     <Image alt = "" src = "/Cart1 with buy.png" width={32} height={32}/>
+    </Link>
+    <Link href='/edit-profile'>
+    <Image alt = "" src = "/user.png" width={32} height={32}/>
+    </Link>
   
 
             </div>

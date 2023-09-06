@@ -100,7 +100,7 @@ export default function Footer () {
                 <h1 className="text-[24px] font-bold leading-[24px]">Support</h1>
                 {
                     support.map((element,idx)=> {
-                        return <div className="max-w-[175px] text-[16px] font-normal leading-[24px]">{element.name}</div>
+                        return <div key={idx} className="max-w-[175px] text-[16px] font-normal leading-[24px]">{element.name}</div>
                     })
                 }
                 </div>
@@ -108,7 +108,7 @@ export default function Footer () {
                 <h1 className="text-[24px] font-bold leading-[24px]">Account</h1>
                 {
                     account.map((element,idx)=> {
-                        return <div className="max-w-[175px] text-[16px] font-normal leading-[24px]">{element.name}</div>
+                        return <div key={idx} className="max-w-[175px] text-[16px] font-normal leading-[24px]">{element.name}</div>
                     })
                 }
                 </div>
@@ -116,7 +116,7 @@ export default function Footer () {
                 <h1 className="text-[24px] font-bold leading-[24px]">Quick Links</h1>
                 {
                     quickLinks.map((element,idx)=> {
-                        return <div className="max-w-[175px] text-[16px] font-normal leading-[24px]">{element.name}</div>
+                        return <div key={idx} className="max-w-[175px] text-[16px] font-normal leading-[24px]">{element.name}</div>
                     })
                 }
                 </div>

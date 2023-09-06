@@ -46,7 +46,7 @@ export default function HeroSection () {
         <div className="flex flex-col gap-[16px] border-r-[1px] border-r-gray-700 pr-[16px]">
                {
                 sideBar.map((element,idx)=> {
-                    return <div className="flex flex-row items-center justify-between w-[217px]">
+                    return <div key={idx} className="flex flex-row items-center justify-between w-[217px]">
                        <div>{element.name}</div>
                       {
                         element.icon && <Image alt = "" src = "/DropDown (1).png" width={24} height={24}/>

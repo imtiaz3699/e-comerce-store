@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Cart = () => {
     return <div className='pt-[80px] pb-[140px] px-[135px]'>
@@ -54,7 +55,9 @@ const Cart = () => {
                     
                     </div>
                     <div className='flex justify-center mt-[16px]'>
+                        <Link href='/checkout'>
                     <button className='bg-[#DB4444] w-[260px] h-[56px] rounded-[4px]'>Process To Checkout</button>
+                    </Link>
                     </div>
                     </div>
                 </div>

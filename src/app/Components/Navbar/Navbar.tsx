@@ -80,7 +80,9 @@ export default function Navbar () {
     <Link href='/wish-list'>
     <Image alt = "" src = "/Wishlist.png" width={32} height={32}/>
     </Link>
+    <Link href='/cart'>
     <Image alt = "" src = "/Cart1 with buy.png" width={32} height={32}/>
+    </Link>
   
 
             </div>

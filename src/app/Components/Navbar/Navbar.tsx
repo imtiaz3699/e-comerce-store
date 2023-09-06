@@ -83,6 +83,9 @@ export default function Navbar () {
     <Link href='/cart'>
     <Image alt = "" src = "/Cart1 with buy.png" width={32} height={32}/>
     </Link>
+    <Link href='/edit-profile'>
+    <Image alt = "" src = "/user.png" width={32} height={32}/>
+    </Link>
   
 
             </div>

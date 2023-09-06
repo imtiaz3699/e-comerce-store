@@ -1,3 +1,4 @@
+
 'use client'
 import SaleCard from "../SaleCard/SaleCard";
 // import SectionHeading from "../SectionHeading/SectionHeading";

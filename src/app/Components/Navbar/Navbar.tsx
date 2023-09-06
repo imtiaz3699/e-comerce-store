@@ -60,8 +60,8 @@ export default function Navbar () {
                     {
                         navItems.map((element,idx)=> {
 
-                            return <Link href={element.url}> 
-                            <div key = {idx} className={`${pathName === element.url ? "underline text-[#DB4444]" : ""}`}>{element.name}</div>
+                            return <Link key = {idx} href={element.url}> 
+                            <div  className={`${pathName === element.url ? "underline text-[#DB4444]" : ""}`}>{element.name}</div>
                             </Link>
                         })
                     }

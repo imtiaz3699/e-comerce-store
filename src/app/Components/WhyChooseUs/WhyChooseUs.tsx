@@ -22,7 +22,7 @@ const data = [
     return <div className="py-[70px] flex flex-row items-center justify-center gap-[88px]">
 {
     data.map((element,idx)=> {
-        return <div className="249px h-[161px] flex flex-col items-center gap-[24px]">
+        return <div key={idx} className="249px h-[161px] flex flex-col items-center gap-[24px]">
         <div className="w-[80px] h-[80px] rounded-full  bg-gray-400 flex flex-row items-center justify-center">
             <div className="w-[58px] h-[58px] rounded-full bg-black flex flex-row items-center justify-center">
                 <Image alt="" src={element.img} width={40} height={40}/>
